@@ -90,7 +90,7 @@ public class GuardAI : MonoBehaviour
                 }
                 break;
             case AI_State.SeenPlayer:
-                _agent.stoppingDistance = 2f;
+                _agent.stoppingDistance = 1.5f;
                 _agent.SetDestination(_playerPosition.position);
                 break;
         }         
