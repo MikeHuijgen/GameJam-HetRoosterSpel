@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyFOV : MonoBehaviour
 {
@@ -24,10 +25,6 @@ public class EnemyFOV : MonoBehaviour
         {
             CheckFOV();
         }
-        else
-        {
-            // hier moet iets als de speler gezien word
-        }
     }
 
     private void CheckFOV()
@@ -41,8 +38,12 @@ public class EnemyFOV : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 seenThePlayer = true;
-                Debug.Log("uwdugdwug");
+                GuardAI guardAI = GetComponent<GuardAI>();
+                guardAI.ChangeAIStateToSeenPlayer(hit.transform);
+                _light.color = Color.red;
+                GameHandler.Instance._startReset = true;
             }
         }
     }
+
 }
