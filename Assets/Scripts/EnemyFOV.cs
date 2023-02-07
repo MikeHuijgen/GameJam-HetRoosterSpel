@@ -38,8 +38,10 @@ public class EnemyFOV : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 seenThePlayer = true;
+
                 GuardAI guardAI = GetComponent<GuardAI>();
                 guardAI.ChangeAIStateToSeenPlayer(hit.transform);
+
                 _light.color = Color.red;
                 GameHandler.Instance._startReset = true;
             }

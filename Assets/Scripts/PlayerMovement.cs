@@ -10,6 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _SmoothAnimationTime;
     [SerializeField] private Rigidbody _rb;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         HandleMovement();

@@ -11,14 +11,14 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private AI_State _state = AI_State.Idle;
     [SerializeField] private Transform _waypointPath;
 
-    [SerializeField] private Transform _currentWaypoint;
-    [SerializeField] private Transform _LastWaypoint;
-
+    private Transform _currentWaypoint;
+    private Transform _LastWaypoint;
     private List<Transform> _waypoints = new List<Transform>();
-    private float _currentWaitTimer;
-    private bool _IsSearchingForWaypoint = false;
     private Transform _playerPosition;
 
+    private float _currentWaitTimer;
+    private bool _IsSearchingForWaypoint = false;
+    
     private enum AI_State
     { 
         Idle,
