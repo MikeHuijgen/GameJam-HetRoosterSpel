@@ -18,6 +18,7 @@ public class PlayerPickUpCollider : MonoBehaviour
         if (_isInRange && Input.GetKeyDown(KeyCode.E))
         {
             _isInRange = false;
+            ObjectiveLog.Instance.PickedUpARooster();
             _pickUpPanel.SetActive(false);
             Destroy(_rooster.parent.gameObject);
             _rooster = null;
