@@ -71,6 +71,7 @@ MonoBehaviour:
   _agent: {fileID: 393402813}
   _state: 0
   _waypointPath: {fileID: 0}
+  _animator: {fileID: 5941967363589059402}
 --- !u!195 &393402813
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -294,13 +295,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 137720934533220950, guid: 2f3e27eecb190e44a9af50723c394274,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7d22fc6b9a431b043a917fb89a80bcfc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
+--- !u!95 &5941967363589059402 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95787105524477528, guid: 2f3e27eecb190e44a9af50723c394274,
+    type: 3}
+  m_PrefabInstance: {fileID: 5990445049860185362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5994871810754302546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4580766925885248, guid: 2f3e27eecb190e44a9af50723c394274,

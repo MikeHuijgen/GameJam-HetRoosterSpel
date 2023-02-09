@@ -10,6 +10,7 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private AI_State _state = AI_State.Idle;
     [SerializeField] private Transform _waypointPath;
+    [SerializeField] private Animator _animator;
 
     private Transform _currentWaypoint;
     private Transform _LastWaypoint;
@@ -48,6 +49,7 @@ public class GuardAI : MonoBehaviour
         switch(_state)
         {
             case AI_State.Idle:
+                _animator.SetBool("IsWalking", false);
                 _currentWaitTimer -= Time.deltaTime;
 
                 if (_currentWaitTimer <= 0)
@@ -80,6 +82,7 @@ public class GuardAI : MonoBehaviour
                     _LastWaypoint = _currentWaypoint;
                 }
 
+                _animator.SetBool("IsWalking", true);
                 _agent.SetDestination(_currentWaypoint.position);
 
                 if (Vector3.Distance(transform.position, _currentWaypoint.position) < _agent.stoppingDistance)
@@ -91,7 +94,13 @@ public class GuardAI : MonoBehaviour
                 break;
             case AI_State.SeenPlayer:
                 _agent.stoppingDistance = 1.5f;
+                _animator.SetBool("IsWalking", true);
                 _agent.SetDestination(_playerPosition.position);
+
+                if (Vector3.Distance(transform.position, _playerPosition.position) < _agent.stoppingDistance)
+                {
+                    _state = AI_State.Idle;
+                }
                 break;
         }         
     }
