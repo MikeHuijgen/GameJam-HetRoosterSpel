@@ -8,6 +8,7 @@ public class ObjectiveLog : MonoBehaviour
     public TMP_Text ObjectiveText;
     public Transform RoosterParent;
     private BoxCollider test;
+    [SerializeField] private ExitDoor exitDoor;
 
     [SerializeField] private objective currentObjective;
 
@@ -60,6 +61,7 @@ public class ObjectiveLog : MonoBehaviour
                 if (roosters == totalRoosters)
                 {
                     currentObjective = objective.Escape;
+                    exitDoor.EnableCollider();
                 }
                 break;
             case objective.Escape:

@@ -22,6 +22,8 @@ public class GameHandler : MonoBehaviour
             return;
         }
         Instance = this;
+
+        Time.timeScale = 1.0f;
     }
 
     private void Start()
